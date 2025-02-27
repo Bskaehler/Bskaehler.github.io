@@ -15,4 +15,4 @@ I also collect comic books. Mainly superheroes, but I do read other genres as we
  - [League of Comic Geeks](https://www.leagueofcomicgeeks.com) - I've been collecting comic books for a few years now and it's easy to get overwhelmed with how many different books are out there. This website has been a valuable resource in keeping track of what I have and what I'm looking for. 
 
  ## Other Websites
- - [Lesson 7, Lab 2](https://bskaehler.github.io/<repository>/lessonFiles/lesson7.html)
+ - [Lesson 7, Lab 2](https://bskaehler.github.io/lessonFiles/lesson7.html)
