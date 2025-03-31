@@ -1,0 +1,53 @@
+<!-- NEW FILE FOR LESSON 11 -->
+<!doctype html>
+<html>
+	<head>
+      <title>Registration</title>
+      <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+      <h1>Course Registration</h1>
+      <form action="registration.php" method="post">
+         <label for="fname">First Name:</label>
+         <input type="text" id="fname" name="fname" required>
+         <br><br>
+         <label for="lname">Last Name:</label>
+         <input type="text" id="lname" name="lname" required>
+
+         <br><br>
+         <label for= "email">Email:</label>
+	      <input type="email" id="email" name="email">
+
+	      <br><br>
+	      <label for= "numCourse">Number of Courses to Register:</label>
+	      <input type="number" id="numCourse" name="numCourse" min="1" max="3" value="1">
+         <br><br>
+
+         <label for="major">Major Program:</label> 
+         <select name="major" id="major">
+            <option value="Programming">Programming</option>  
+            <option value="Data">Data Science</option>
+            <option value="Network">Networking</option>
+         </select>
+         <br><br>
+
+         <input type="radio" id="InState" name="status" value="InState">
+	      <label for="html">In-State</label><br>
+	      <input type="radio" id="OutState" name="status" value="OutState">
+	      <label for="css">Out-State</label>
+	      <br><br>
+
+         <input type="checkbox" id="CSC120" name="CSC120" value="CSC120">
+         <label for="CSC120">CSC120 Computing Fundamentals</label><br>
+         <input type="checkbox" id="CSC121" name="CSC121" value="CSC121">
+         <label for="CSC121">CSC121 Python Programming</label><br>
+         <input type="checkbox" id="CSC154" name="CSC154" value="CSC154">
+         <label for="CSC154">CSC154 Software Development</label><br>
+         <br><br>
+
+         <input type="submit" value="Submit">&nbsp;&nbsp;
+         <input type="reset" value="Cancel">
+      </form>
+	   <br>
+	</body>
+</html>
