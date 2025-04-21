@@ -8,6 +8,12 @@
    <h1>Tuition Receipt</h1>
 
    <?php
+      $server = "hermes.waketech.edu";
+      $user = "bskaehler";
+      $pw = "csc124";
+      $db = "bskaehler";
+      $port = "3386";
+
       $fname = $_POST['fname'];
       $lname = $_POST['lname'];
       $numCourse = $_POST['numCourse'];
@@ -40,6 +46,35 @@
       }   
 
       print("<p>Your tuition is $".number_format($tuition,2).".</p>");
+
+      $connect = mysqli_connect ($server, $user, $pw, $db, $port);
+      if(!connect)
+      {
+         die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
+      }
+
+      $userQuery = "SELECT firstName, lastName FROM personnel WHERE jobTitle = 'Manager'";
+      $result = mysqli_query($connect, $userQuery);
+
+      if (!$result)
+      {
+         die("Could not successfully run query ($userQuery) from $db: ".mysqli_error ($connect));
+      }
+
+      if (mysqli_num_rows($result) == 0)
+      {
+         print ("No records found with query $userQuery");
+      }
+      else
+      {
+         print("<p> Please contact program manager(s) if you have any questions:</p>");
+         while($row = mysqli_fetch_assoc($result))
+         {
+            print("<p>".$row['firstName']." ".$row['lastName']."</p>");
+         }
+      }
+
+      mysqli_close($connect);
    ?>
 
    <br><br>
