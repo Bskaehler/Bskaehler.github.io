@@ -49,8 +49,8 @@
       $connect = mysqli_connect($server, $user, $pw, $db, $port);
       if(!$connect)
       {
-         //die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
-         die("ERROR");
+         die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
+         //die("ERROR");
       }
 
       $userQuery = "SELECT firstName, lastName FROM personnel WHERE jobTitle = 'Manager'";
