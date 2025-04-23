@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
    <head>
    <title>Tuition Receipt</title>
@@ -33,8 +32,8 @@
       print("<p>$fname $lname</p>");
       print("<p>Your major is $major.</p>");
       print("<p>You are $status student.</p>");
-      
       print("<p>You have registered $numCourse courses.</p>");
+      
       if(isset($_POST['CSC120'])){
          print("CSC120 Computing Fundamentals<br>");
       }
@@ -47,7 +46,7 @@
 
       print("<p>Your tuition is $".number_format($tuition,2).".</p>");
 
-      $connect = mysqli_connect ($server, $user, $pw, $db, $port);
+      $connect = mysqli_connect($server, $user, $pw, $db, $port);
       if(!connect)
       {
          die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
@@ -55,7 +54,7 @@
 
       $userQuery = "SELECT firstName, lastName FROM personnel WHERE jobTitle = 'Manager'";
       $result = mysqli_query($connect, $userQuery);
-
+      
       if (!$result)
       {
          die("Could not successfully run query ($userQuery) from $db: ".mysqli_error ($connect));
@@ -74,7 +73,7 @@
          }
       }
 
-      mysqli_close($connect);
+      mysqli_close($connect); 
    ?>
 
    <br><br>
