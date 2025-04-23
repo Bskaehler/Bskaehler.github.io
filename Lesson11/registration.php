@@ -45,11 +45,12 @@
       }   
 
       print("<p>Your tuition is $".number_format($tuition,2).".</p>");
-
+      
       $connect = mysqli_connect($server, $user, $pw, $db, $port);
-      if(!connect)
+      if(!$connect)
       {
-         die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
+         //die("ERROR: Cannot connect to database $db on server $server using name $user (".mysqli_connect_errno().")");
+         die("ERROR");
       }
 
       $userQuery = "SELECT firstName, lastName FROM personnel WHERE jobTitle = 'Manager'";
@@ -73,7 +74,7 @@
          }
       }
 
-      mysqli_close($connect); 
+      mysqli_close($connect);
    ?>
 
    <br><br>
